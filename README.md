@@ -39,28 +39,6 @@ projet-anime/
 │
 └── README.md
 
-
-
- Installation
-1. Cloner le projet
-git clone https://github.com/ton-projet-anime.git
-
-
-
-2. Créer un environnement virtuel 
-python -m venv venv
-venv\Scripts\activate      # Windows
-
-
-3. Installer les dépendances
-pip install -r requirements.txt
-
-
-4. Lancer Jupyter Notebook
-jupyter notebook
-
-
-
  Dépendances principales
 Voici les librairies utilisées dans le projet :
 - pandas
@@ -106,11 +84,8 @@ Tu peux les installer avec :
 - Importance des variables
  5. Export des graphiques
 Tous les graphiques sont enregistrés automatiquement dans le dossier figures/.
-- Ouvrir le notebook :
-jupyter notebook notebooks/analyse_anime.ipynb
 
-
-- Exécute les cellules dans l’ordre :
+- Exécute des céllules dans l’ordre :
 - Chargement des données
 - Nettoyage
 - EDA
