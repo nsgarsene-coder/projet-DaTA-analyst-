@@ -1,0 +1,307 @@
+﻿Rapport d’Analyse des Graphiques 
+
+Ce rapport présente une analyse détaillée de chaque graphique généré au cours de l’exploration des données.
+
+
+
+1. Boxplot après normalisation
+
+
+Interprétation
+
+Les variables normalisées (Nb\_Episodes, Note\_Globale, Note\_Meilleur\_Ep, Note\_Pire\_Ep, anomaly) sont centrées autour de 0, avec des amplitudes comparables.
+
+Insight
+
+La normalisation a correctement mis toutes les variables sur la même échelle, ce qui est indispensable pour les algorithmes sensibles aux magnitudes (K-Means, Isolation Forest).
+
+Cela garantit que aucune variable ne domine artificiellement les autres.
+
+
+
+
+
+
+2. Boxplot Note\_Meilleur\_Ep par Studio
+
+
+Les studios comme Madhouse, Ufotable, Kyoto Animation affichent des médianes très élevées pour leurs meilleurs épisodes.
+
+D’autres studios montrent une plus grande variabilité.
+
+ Insight
+
+La qualité maximale dépend fortement du studio.
+
+Certains studios produisent régulièrement des épisodes d’exception, tandis que d’autres sont plus irréguliers.
+
+
+
+
+
+ 3. Boxplot de la Note Globale
+
+ Interprétation
+
+La note globale est concentrée entre 7.5 et 9, avec très peu d’outliers.
+
+ Insight
+
+Les animés du dataset sont globalement bien notés.
+
+Cela confirme que le dataset contient principalement des séries populaires ou reconnues.
+
+
+
+
+ 4. Boxplot de la Note du Meilleur Épisode
+
+ Interprétation
+
+Les meilleurs épisodes sont presque toujours notés entre 9.0 et 9.7.
+
+ Insight
+
+Le meilleur épisode est un indicateur peu discriminant : presque tous les animés ont un épisode exceptionnel.
+
+Ce n’est donc pas un bon critère pour différencier les séries.
+
+
+
+
+ 5. Boxplot de la Note du Pire Épisode
+
+ Interprétation
+
+La dispersion est beaucoup plus forte que pour les meilleurs épisodes.
+
+Certains animés ont des épisodes très faibles (4–5), d’autres restent élevés même dans leurs pires moments.
+
+ Insight
+
+Le pire épisode est un excellent indicateur de régularité.
+
+Il explique en grande partie la perception globale d’un animé.
+
+
+
+
+ 6. Détection d’anomalies (Isolation Forest)
+
+ Interprétation
+
+Les points marqués comme anomalies correspondent à des animés atypiques :
+
+\- très longs
+
+\- très courts
+
+\- notes extrêmes
+
+\- structure inhabituelle
+
+ Insight
+
+L’Isolation Forest a correctement identifié les séries “hors norme”.
+
+Ces séries doivent être analysées séparément car elles peuvent biaiser les modèles.
+
+
+
+
+ 7. Boxplot du pire épisode par studio
+
+ Interprétation
+
+Certains studios ont des “pires épisodes” très bas (Studio Pierrot, Deen), tandis que d’autres restent constants.
+
+ Insight
+
+La régularité dépend fortement du studio.
+
+Certains studios ont une qualité minimale très faible, ce qui impacte la perception globale de leurs œuvres.
+
+
+
+Insight
+
+La normalisation a correctement mis toutes les variables sur la même échelle, ce qui est indispensable pour les algorithmes sensibles aux magnitudes (K-Means, Isolation Forest).
+
+Cela garantit que aucune variable ne domine artificiellement les autres.
+
+
+
+
+ 2. Boxplot Note\_Meilleur\_Ep par Studio
+
+ Interprétation
+
+Les studios comme Madhouse, Ufotable, Kyoto Animation affichent des médianes très élevées pour leurs meilleurs épisodes.
+
+D’autres studios montrent une plus grande variabilité.
+
+ Insight
+
+La qualité maximale dépend fortement du studio.
+
+Certains studios produisent régulièrement des épisodes d’exception, tandis que d’autres sont plus irréguliers.
+
+
+
+3. Boxplot de la Note Globale
+
+Interprétation
+
+La note globale est concentrée entre 7.5 et 9, avec très peu d’outliers.
+
+ Insight
+
+Les animés du dataset sont globalement bien notés.
+
+Cela confirme que le dataset contient principalement des séries populaires ou reconnues.
+
+
+
+ 4. Boxplot de la Note du Meilleur Épisode
+
+ Interprétation
+
+Les meilleurs épisodes sont presque toujours notés entre 9.0 et 9.7.
+
+ Insight
+
+Le meilleur épisode est un indicateur peu discriminant : presque tous les animés ont un épisode exceptionnel.
+
+Ce n’est donc pas un bon critère pour différencier les séries.
+
+
+
+ 5. Boxplot de la Note du Pire Épisode
+
+ Interprétation
+
+La dispersion est beaucoup plus forte que pour les meilleurs épisodes.
+
+Certains animés ont des épisodes très faibles (4–5), d’autres restent élevés même dans leurs pires moments.
+
+ Insight
+
+Le pire épisode est un excellent indicateur de régularité.
+
+Il explique en grande partie la perception globale d’un animé.
+
+
+
+ 6. Détection d’anomalies (Isolation Forest)
+
+ Interprétation
+
+Les points marqués comme anomalies correspondent à des animés atypiques :
+
+\- très longs
+
+\- très courts
+
+\- notes extrêmes
+
+\- structure inhabituelle
+
+ Insight
+
+L’Isolation Forest a correctement identifié les séries “hors norme”.
+
+Ces séries doivent être analysées séparément car elles peuvent biaiser les modèles.
+
+
+
+ 7. Boxplot du pire épisode par studio
+
+ Interprétation
+
+Certains studios ont des “pires épisodes” très bas (Studio Pierrot, Deen), tandis que d’autres restent constants.
+
+ Insight
+
+La régularité dépend fortement du studio.
+
+Certains studios ont une qualité minimale très faible, ce qui impacte la perception globale de leurs œuvres.
+
+
+
+ 8. Matrice de corrélation entre les notes
+
+ Interprétation
+
+\- Note\_Pire\_Ep ↔ Score\_Final : corrélation très forte
+
+\- Note\_Globale ↔ Score\_Final : corrélation modérée
+
+\- Note\_Meilleur\_Ep ↔ Note\_Pire\_Ep : corrélation faible
+
+ Insight
+
+Le score final dépend surtout de la régularité (pire épisode), pas du meilleur épisode.
+
+Un animé peut avoir un épisode incroyable mais rester irrégulier.
+
+
+
+ 9. Histogramme Note\_Pire\_Ep
+
+ Interprétation
+
+La distribution est centrée autour de 6–7, avec quelques valeurs très basses.
+
+ Insight
+
+Les “pires épisodes” restent globalement corrects, mais certains animés ont de véritables chutes de qualité.
+
+
+
+ 10. Scatterplots entre les notes
+
+ Interprétation
+
+\- Note\_Globale augmente avec Score\_Final
+
+\- Note\_Pire\_Ep est très lié au Score\_Final
+
+\- Note\_Meilleur\_Ep est moins corrélé
+
+ Insight
+
+La régularité influence plus la perception globale que le meilleur épisode.
+
+Les spectateurs retiennent davantage les épisodes faibles que les épisodes exceptionnels.
+
+
+
+ Conclusion générale du rapport visuel
+
+L’analyse graphique confirme plusieurs points clés :
+
+✔️ La régularité est le facteur le plus important
+
+Le pire épisode explique presque entièrement le score final.
+
+✔️ Le meilleur épisode n’est pas discriminant
+
+Presque tous les animés ont un épisode exceptionnel.
+
+✔️ Les studios jouent un rôle majeur
+
+Certains sont constants, d’autres très irréguliers.
+
+✔️ Les anomalies correspondent à des séries extrêmes
+
+Elles doivent être traitées séparément.
+
+✔️ Le clustering est cohérent
+
+Les animés se regroupent selon leur qualité et leur régularité.
+
+
+
+
+
+
