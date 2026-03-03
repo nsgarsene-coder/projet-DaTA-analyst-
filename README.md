@@ -1,4 +1,4 @@
- README — Analyse des Animés (EDA, Clustering, Classification)
+ Analyse des Animés (EDA, Clustering, Classification)
  Description du projet
 Ce projet analyse un dataset d’animés à partir de plusieurs indicateurs de qualité :
 - Note globale
